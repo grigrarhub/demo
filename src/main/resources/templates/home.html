@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>конвертация валют</h2>
+<hr />
+<form action="/convert" method="get">
+    <p>Из
+    <select id = "currencys1" name="currencys1">
+        <option value="">Выберите валюту</option>
+        <option th:each="currency: ${currencies}"
+            th:value="${currency.value}"
+            th:text="${currency.name}"></option>
+    </select></p>
+    <p>В
+    <select id = "currencys2" name="currencys2">
+        <option value="">Выберите валюту</option>
+        <option th:each="currency: ${currencies}"
+            th:value="${currency.value}"
+            th:text="${currency.name}"></option>
+    </select>
+    </p>
+    <p>
+        <label for="firstname">Количество средств: </label>
+        <input type="text" id="firstname" name="money"/>
+    </p>
+    <input type="submit" />
+
+</form>
+
+</body>
+</html>
